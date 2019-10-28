@@ -8,7 +8,9 @@ A [Duct](https://github.com/duct-framework/duct) library that provides an [Integ
 * [Installation](#installation)
 * [Usage](#usage)
   * [Configuration](#configuration)
-
+  * [Obtaining a Webflow record] (#obtaining-a-webflow-record)
+  * [Available methods] (#available-methods)
+    
 ## Installation
 
 [![Clojars Project](https://clojars.org/magnet/cms.webflow/latest-version.svg)](https://clojars.org/magnet/cms.webflow)
@@ -97,6 +99,28 @@ user> wf-record
 user>
 ```
 Now that we have our `Webflow` record, we are ready to use the methods defined by the protocols defined in `magnet.cms.core` namespace.
+
+### Available methods
+
+This are the methods available to interact with the Webflow CMS API. The mapping for the methods is one to one, so refer to the Webflow official documentation for details.
+
+  * [Collections](https://developers.webflow.com/?shell#collections)
+    * [(get-all-collections wf-record)](https://developers.webflow.com/?shell#list-collections)
+    * [(get-collection wf-record collection-id)](https://developers.webflow.com/?shell#get-collection-with-full-schema)
+  * [Items](https://developers.webflow.com/?shell#items)
+    * [(get-items wf-record collection-id)](https://developers.webflow.com/?shell#get-all-items-for-a-collection)
+    * [(get-item wf-record collection-id item-id)](https://developers.webflow.com/?shell#get-single-item)  
+  * [E-commerce](https://developers.webflow.com/?shell#ecommerce)
+    * [(get-all-orders wf-record)](https://developers.webflow.com/?shell#get-all-orders)
+    * [(get-order wf-record order-id)](https://developers.webflow.com/?shell#get-order)  
+    * [(update-order wf-record order-id fields)](https://developers.webflow.com/?shell#update-order)
+    * [(fulfill-order wf-record order-id)](https://developers.webflow.com/?shell#fulfill-order)  
+    * [(unfulfill-order wf-record order-id)](https://developers.webflow.com/?shell#unfulfill-order)
+    * [(refund-order wf-record order-id)](https://developers.webflow.com/?shell#refund-order)
+    * [(get-item-inventory wf-record collection-id item-id)](https://developers.webflow.com/?shell#item-inventory)
+    * [(update-item-inventory wf-record collection-id item-id)](https://developers.webflow.com/?shell#update-item-inventory)
+    
+All the responses will include a `:success?` key. When `:success?` is `false` `:reason` and `error-details` keys will be included. The possible reasons can be: `:bad-request`, `not-found`, `access-denied` and `error`. The `error-details` will include a map with the error information provided by the Webflow API.
 
 ## License
 
