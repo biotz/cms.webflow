@@ -8,8 +8,8 @@ A [Duct](https://github.com/duct-framework/duct) library that provides an [Integ
 * [Installation](#installation)
 * [Usage](#usage)
   * [Configuration](#configuration)
-  * [Obtaining a Webflow record] (#obtaining-a-webflow-record)
-  * [Available methods] (#available-methods)
+  * [Obtaining a Webflow record](#obtaining-a-webflow-record)
+  * [Available methods](#available-methods)
     
 ## Installation
 
