@@ -1,7 +1,8 @@
 (ns magnet.cms.webflow.collections-test
   (:require [clojure.test :refer :all]
             [integrant.core :as ig]
-            [magnet.cms.core :as cms])
+            [magnet.cms.core :as cms]
+            [magnet.cms.webflow])
   (:import [java.util UUID]))
 
 (def ^:const test-config
