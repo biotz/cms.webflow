@@ -1,4 +1,4 @@
-(defproject magnet/cms.webflow "0.1.0"
+(defproject magnet/cms.webflow "0.1.1-SNAPSHOT"
   :description "A Duct library for interacting with the Webflow CMS API"
   :url "http://github.com/magnetcoop/cms.webflow"
   :license {:name "Mozilla Public License 2.0"
