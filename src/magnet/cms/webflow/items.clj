@@ -1,7 +1,8 @@
 (ns magnet.cms.webflow.items
-  (:import [magnet.cms.webflow Webflow])
+  (:import [magnet.cms.webflow.connector Webflow])
   (:require [magnet.cms.core :as core]
-            [magnet.cms.util :as util]))
+            [magnet.cms.util :as util]
+            [magnet.cms.webflow.connector]))
 
 (defn get-items [wf-record collection-id]
   (let [{:keys [status body] :as result} (util/do-request wf-record {:method :get

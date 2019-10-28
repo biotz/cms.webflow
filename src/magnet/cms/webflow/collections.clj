@@ -1,7 +1,8 @@
 (ns magnet.cms.webflow.collections
-  (:import [magnet.cms.webflow Webflow])
+  (:import [magnet.cms.webflow.connector Webflow])
   (:require [magnet.cms.core :as core]
-            [magnet.cms.util :as util]))
+            [magnet.cms.util :as util]
+            [magnet.cms.webflow.connector]))
 
 (defn get-all-collections [{:keys [site-id] :as wf-record}]
   (-> wf-record

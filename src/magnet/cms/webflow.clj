@@ -1,6 +1,7 @@
 (ns magnet.cms.webflow
   (:require [integrant.core :as ig]
             [magnet.cms.webflow.collections]
+            [magnet.cms.webflow.connector :as connector]
             [magnet.cms.webflow.e-commerce]
             [magnet.cms.webflow.items]))
 
@@ -25,10 +26,8 @@
 (def ^:const default-backoff-ms
   [default-initial-delay default-max-delay 2.0])
 
-(defrecord Webflow [api-token site-id timeout max-retries backoff-ms])
-
 (defmethod ig/init-key :magnet.cms/webflow [_ {:keys [api-token site-id timeout max-retries backoff-ms]
                                                :or {timeout default-timeout
                                                     max-retries default-max-retries
                                                     backoff-ms default-backoff-ms}}]
-  (->Webflow api-token site-id timeout max-retries backoff-ms))
+  (connector/->Webflow api-token site-id timeout max-retries backoff-ms))
