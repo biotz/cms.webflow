@@ -5,11 +5,11 @@
             [magnet.cms.webflow.items]))
 
 (def ^:const default-timeout
-  "Default timeout value for an connection attempt with grafana."
+  "Default timeout value for an connection attempt with Webflow CMS API."
   2000)
 
 (def ^:const default-max-retries
-  "Default limit of attempts for grafana request."
+  "Default limit of attempts for Webflow request."
   10)
 
 (def ^:const default-initial-delay
