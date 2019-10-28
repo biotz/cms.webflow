@@ -28,7 +28,7 @@
 (defrecord Webflow [api-token site-id timeout max-retries backoff-ms])
 
 (defmethod ig/init-key :magnet.cms/webflow [_ {:keys [api-token site-id timeout max-retries backoff-ms]
-                                                      :or {timeout default-timeout
-                                                           max-retries default-max-retries
-                                                           backoff-ms default-backoff-ms}}]
+                                               :or {timeout default-timeout
+                                                    max-retries default-max-retries
+                                                    backoff-ms default-backoff-ms}}]
   (->Webflow api-token site-id timeout max-retries backoff-ms))
