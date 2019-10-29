@@ -29,7 +29,7 @@ These are the mandatory keys:
 * `:api-token` : the [token](https://developers.webflow.com/oauth#api-keys) needed to authenticate against Webflow CMS API
 
 These are the optional keys:
-* `:timeout`: Timeout value (in milli-seconds) for an connection attempt with Grafana.
+* `:timeout`: Timeout value (in milli-seconds) for an connection attempt with Webflow.
 * `:max-retries`: If the connection attempt fails, how many retries we want to attempt before giving up.
 * `:backoff-ms`: This is a vector in the form [initial-delay-ms max-delay-ms multiplier] to control the delay between each retry. The delay for nth retry will be (max (* initial-delay-ms n multiplier) max-delay-ms). If multiplier is not specified (or if it is nil), a multiplier of 2 is used. All times are in milli-seconds.
 
@@ -75,7 +75,7 @@ user> (def config {:site-id  #duct/env ["WEBFLOW_SITE_ID" Str :or "5f7a9571fedvb
 user>
 ```
 
-Now that we have all pieces in place, we can initialize the `:magnet.cms/webflow` Integrant key to get a `Grafana` record. As we are doing all this from the REPL, we have to manually require `magnet.cms.webflow` namespace, where the `init-key` multimethod for that key is defined (this is not needed when Duct takes care of initializing the key as part of the application start up):
+Now that we have all pieces in place, we can initialize the `:magnet.cms/webflow` Integrant key to get a `Webflow` record. As we are doing all this from the REPL, we have to manually require `magnet.cms.webflow` namespace, where the `init-key` multimethod for that key is defined (this is not needed when Duct takes care of initializing the key as part of the application start up):
 
 ``` clj
 user> (require '[magnet.cms.webflow :as webflow])
